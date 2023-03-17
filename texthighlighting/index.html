@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Highlighting</title>
+
+</head>
+<body>
+    <h2>Words greater than 8 alphabets are highlighted</h2>
+    <p id="my-paragraph">The objective is to write a JavaScript program that enables an image to move according to the direction
+        specified by the arrow keys. The program must be able to recognize and respond to the input from the arrow
+        keys, and accordingly, update the position of the image on the screen. The program should be able to handle
+        the movement of the image in all directions, including up, down, left, and right, in a smooth and responsive
+        manner. Have a look at the event key codes before starting the project.</p>
+    
+</body>
+<script>
+    const paragraph = document.getElementById('my-paragraph');
+
+// Split the paragraph text into an array of words
+const words = paragraph.textContent.split(' ');
+
+// Loop through the words and add a span element with a yellow background color
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > 8) {
+    const span = document.createElement('span');
+    span.textContent = words[i];
+    span.style.backgroundColor = 'yellow';
+    paragraph.replaceChild(span, document.createTextNode(words[i]));
+  }
+}
+
+</script>
+</html>

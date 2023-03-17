@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move the image</title>
+    <style>
+        #my-image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+}
+
+    </style>
+</head>
+<body>
+    <img id="my-image" src="https://tse1.mm.bing.net/th?id=OIP.H-bqGt2X8F5E_eroB7GEWwHaKC&pid=Api&P=0">
+    <script>
+        const image = document.getElementById('my-image');
+
+// Set initial position and speed of the image
+let xPos = 0;
+let yPos = 0;
+const speed = 5;
+
+// Add event listener for keydown events
+document.addEventListener('keydown', (event) => {
+  // Get the key code from the event object
+  const keyCode = event.keyCode;
+
+  // Move the image based on the arrow key pressed
+  if (keyCode === 37) { // Left arrow
+    xPos -= speed;
+  } else if (keyCode === 38) { // Up arrow
+    yPos -= speed;
+  } else if (keyCode === 39) { // Right arrow
+    xPos += speed;
+  } else if (keyCode === 40) { // Down arrow
+    yPos += speed;
+  }
+
+  // Update the position of the image
+  image.style.left = xPos + 'px';
+  image.style.top = yPos + 'px';
+});
+
+    </script>
+
+</body>
+</html>

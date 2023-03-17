@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changer</title>
+    <style>
+        .btn{
+            background-color: black;
+            color: white;
+            padding: 16px;
+
+        }
+    </style>
+</head>
+<h1>
+    Welcome to color changer
+</h1>
+<body>
+    <button onclick="colorchanger()"" class="btn">
+        Color changer
+    </button>
+    <script>
+
+        function colorchanger(){
+            let colorcode = '123456789abcdef'
+            let code ='#';
+            let index=0;
+            
+            
+            for(index=0;index<6;index++){
+                let color= code + Math.floor(Math.random()*16 )+1
+                document.body.style.background=color
+                
+            }
+        }
+        </script>
+        
+</body>
+</html>
